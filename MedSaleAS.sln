@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.33130.400
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37314.3 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedSaleAS_Windows", "MedSaleAS_Windows\MedSaleAS_Windows.csproj", "{A3046A9B-3166-4C71-8845-A664105D1D5E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedSalesAS_API", "MedSalesAS_API\MedSalesAS_API.csproj", "{29A3FCF3-2021-4A13-8950-9967DB900C9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedSale_API_Core", "MedSale_API_Core\MedSale_API_Core.csproj", "{1E51B086-16EF-4780-AD29-A7DCFC1450FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{29A3FCF3-2021-4A13-8950-9967DB900C9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29A3FCF3-2021-4A13-8950-9967DB900C9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29A3FCF3-2021-4A13-8950-9967DB900C9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E51B086-16EF-4780-AD29-A7DCFC1450FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E51B086-16EF-4780-AD29-A7DCFC1450FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E51B086-16EF-4780-AD29-A7DCFC1450FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E51B086-16EF-4780-AD29-A7DCFC1450FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
