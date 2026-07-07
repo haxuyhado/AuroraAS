@@ -1,0 +1,6 @@
+@MedSale_API_Core_HostAddress = http://localhost:5014
+
+GET {{MedSale_API_Core_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
