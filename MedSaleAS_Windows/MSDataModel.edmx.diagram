@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="be9f3609bd604fff8e95b62564f7eb59" Name="Diagram1">
+        <EntityTypeShape EntityType="AuroraDataModel.Client" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AuroraDataModel.CreateProduct" Width="1.5" PointX="7.5" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AuroraDataModel.Employee" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AuroraDataModel.ItemsInOrder" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AuroraDataModel.Order" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AuroraDataModel.Position" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="AuroraDataModel.Product" Width="1.5" PointX="5.25" PointY="8" IsExpanded="true" />
+        <AssociationConnector Association="AuroraDataModel.FK__Orders__recipien__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="AuroraDataModel.FK__CreatePro__forOr__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="AuroraDataModel.FK__CreatePro__produ__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="AuroraDataModel.FK__Employees__posit__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="AuroraDataModel.FK__Orders__managerI__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="AuroraDataModel.FK__ItemsInOr__order__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="AuroraDataModel.FK__ItemsInOr__produ__31EC6D26" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

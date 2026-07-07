@@ -1,0 +1,36 @@
+﻿<Page x:Class="WPFModernVerticalMenu.Pages.EmployeesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFModernVerticalMenu.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EmployeesPage">
+
+    <Grid>
+        <StackPanel Background="{DynamicResource SecundaryBackgroundColor}" Grid.Row="1" Margin="20">
+            <TextBlock Text="Список сотрудников" FontWeight="Bold" FontSize="16" Foreground="White" HorizontalAlignment="Center"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Foreground="White" Text="Поиск: " Margin="5"/>
+                <TextBox Name="txtSearch" Margin="5" Width="200" TextChanged="txtSearch_TextChanged"/>
+            </StackPanel>
+
+            <ListView x:Name="lvEmployees" Margin="0,10,0,0" Background="Transparent" Foreground="White" MouseDoubleClick="lvEmployees_MouseDoubleClick" SelectionMode="Single" MouseRightButtonUp="lvEmployees_MouseRightButtonDown">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="ФИО" Width="auto" DisplayMemberBinding="{Binding fullName}"/>
+                        <GridViewColumn Header="Должность" Width="auto" DisplayMemberBinding="{Binding Position.position1}"/>
+                        <!-- Здесь можно заменить на привязку к названию должности -->
+                        <GridViewColumn Header="Адрес" Width="auto" DisplayMemberBinding="{Binding address}"/>
+                        <GridViewColumn Header="Телефон" Width="auto" DisplayMemberBinding="{Binding phone}"/>
+                        <GridViewColumn Header="Email" Width="auto" DisplayMemberBinding="{Binding email}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <Button x:Name="btnAddEmployee" Content="Добавить сотрудника" Width="300" Margin="0,10,0,0" Click="btnAddEmployee_Click" Padding="3" Background="SteelBlue" BorderThickness="0" Foreground="White"/>
+        </StackPanel>
+    </Grid>
+</Page>

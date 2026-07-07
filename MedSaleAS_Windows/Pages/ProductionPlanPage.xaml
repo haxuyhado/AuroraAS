@@ -1,0 +1,35 @@
+﻿<Page x:Class="WPFModernVerticalMenu.Pages.ProductionPlanPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFModernVerticalMenu.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ProductionPlanPage">
+
+    <Grid Background="{DynamicResource SecundaryBackgroundColor}" Margin="20">
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Фильтр:" Margin="5" Foreground="White"/>
+                <ComboBox Name="FilterCB" Width="200" Margin="5" SelectionChanged="FilterCB_SelectionChanged">
+                    <ComboBoxItem>Все</ComboBoxItem>
+                    <ComboBoxItem>Выполняется</ComboBoxItem>
+                    <ComboBoxItem>Выполнено</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+            <TextBlock Text="План производства" FontWeight="Bold" FontSize="16" Foreground="White" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+            <ListView x:Name="lvProductionPlan" Margin="0,10,0,0" Background="Transparent" Foreground="White" MouseDoubleClick="lvProductionPlan_MouseDoubleClick" SelectionMode="Single">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Название продукта" Width="auto" DisplayMemberBinding="{Binding Product.productName}"/>
+                        <GridViewColumn Header="Количество" Width="auto" DisplayMemberBinding="{Binding countProduct}"/>
+                        <GridViewColumn Header="Номер заказа" Width="auto" DisplayMemberBinding="{Binding Orede.orderNumber}"/>
+                        <GridViewColumn Header="Статус" Width="auto" DisplayMemberBinding="{Binding status}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Button x:Name="btnPrint" Content="Печатать" Width="300" Margin="0,10,0,0" Click="btnPrintProductionReport_Click"  Padding="3" Background="SteelBlue" BorderThickness="0" Foreground="White"/>
+        </StackPanel>
+    </Grid>
+</Page>

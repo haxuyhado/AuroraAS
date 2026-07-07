@@ -1,0 +1,37 @@
+﻿<Page x:Class="WPFModernVerticalMenu.Pages.AddEditPages.AddEditEmployee"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFModernVerticalMenu.Pages.AddEditPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddEditEmployee">
+
+    <Grid Margin="10">
+        <StackPanel>
+            <Label Content="ФИО:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2"/>
+            <TextBox x:Name="FullNameTextBox" Text="{Binding fullName}" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="2"/>
+
+            <Label Content="Должность:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2"/>
+            <ComboBox x:Name="PositionComboBox" SelectedValue="{Binding positionId}" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="2" DisplayMemberPath="position1" SelectedValuePath="id"/>
+
+            <Label Content="Адрес:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2"/>
+            <TextBox x:Name="AddressTextBox" Text="{Binding address}" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="2"/>
+
+            <Label Content="Телефон:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2"/>
+            <TextBox x:Name="PhoneTextBox" Text="{Binding phone}" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="2"/>
+
+            <Label Content="Электронная почта:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2"/>
+            <TextBox x:Name="EmailTextBox" Text="{Binding email}" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="2"/>
+
+            <Label Content="Пароль:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2"/>
+            <TextBox x:Name="PasswordTextBox" Text="{Binding myPassword}" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="2"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="5">
+                <Button Content="Сохранить" Width="75" Click="SaveButton_Click" Background="SteelBlue" Foreground="White"/>
+                <Button Content="Отмена" Width="75" Click="CancelButton_Click" Background="Gray" Foreground="White" Margin="5,0,0,0"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

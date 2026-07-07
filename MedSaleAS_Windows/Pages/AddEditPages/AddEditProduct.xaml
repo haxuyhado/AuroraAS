@@ -1,0 +1,31 @@
+﻿<Page x:Class="WPFModernVerticalMenu.Pages.AddEditPages.AddEditProduct"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFModernVerticalMenu.Pages.AddEditPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddEditProduct">
+
+    <Grid Margin="10">
+        <StackPanel>
+            <Label Content="Название продукта:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2"/>
+            <TextBox x:Name="ProductNameTextBox" Text="{Binding productName}" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="2"/>
+
+            <Label Content="Основные характеристики:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2"/>
+            <TextBox x:Name="MainCharacteristicsTextBox" Text="{Binding mainCharacteristics}" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="2" AcceptsReturn="True" Height="100" TextWrapping="Wrap" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible"/>
+
+            <Label Content="Количество:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2"/>
+            <TextBox x:Name="CountProductTextBox" Text="{Binding countProduct}" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="2"/>
+
+            <Label Content="Цена:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2"/>
+            <TextBox x:Name="PriceTextBox" Text="{Binding price}" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="2"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="5">
+                <Button Content="Сохранить" Width="75" Click="SaveButton_Click" Background="SteelBlue" Foreground="White"/>
+                <Button Content="Отмена" Width="75" Click="CancelButton_Click" Background="Gray" Foreground="White" Margin="5,0,0,0"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

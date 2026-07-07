@@ -1,0 +1,18 @@
+﻿<Window x:Class="WPFModernVerticalMenu.PrintOrders"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFModernVerticalMenu"
+        mc:Ignorable="d"
+        Title="Печть" Height="200" Width="450" WindowStyle="ToolWindow" ResizeMode="NoResize">
+    <Grid Background="{DynamicResource SecundaryBackgroundColor}">
+        <StackPanel VerticalAlignment="Center">
+            <TextBlock Text="Начальная дата: " HorizontalAlignment="Center" Foreground="White" Margin="5"/>
+            <DatePicker Name="txtStartDate" Width="200"/>
+            <TextBlock Text="Начальная дата: " HorizontalAlignment="Center" Foreground="White" Margin="5"/>
+            <DatePicker Name="txtEndDate" Width="200"/>
+            <Button Name="btnPrint" Content="Печать" Width="200" Margin="10" Click="btnPrint_Click" Background="SteelBlue" BorderThickness="0" Foreground="White"/>
+        </StackPanel>
+    </Grid>
+</Window>
