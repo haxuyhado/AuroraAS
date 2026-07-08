@@ -19,6 +19,9 @@ namespace MedSale_API_Core.Controllers
         public async Task<ActionResult<IEnumerable<Position>>> GetPositions()
         {
             var positions = await _context.Positions.ToListAsync();
+
+            if (positions == null || !positions.Any())
+                return NotFound();
             return Ok(positions);
         }
 

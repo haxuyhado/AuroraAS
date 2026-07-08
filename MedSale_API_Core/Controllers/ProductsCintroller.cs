@@ -19,6 +19,9 @@ namespace MedSale_API_Core.Controllers
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
         {
             var products = await _context.Products.ToListAsync();
+
+            if (products == null || !products.Any()) 
+                return NotFound();
             return Ok(products);
         }
 

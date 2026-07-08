@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MedSale_API_Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+16f70a01752cf8c5f4e7618bd2f2260309afcaff")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ab3a7245574328e2ce9833afc609cb701f62e439")]
 [assembly: System.Reflection.AssemblyProductAttribute("MedSale_API_Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MedSale_API_Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
