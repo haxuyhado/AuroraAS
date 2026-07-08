@@ -6,7 +6,7 @@ namespace MedSale_API_Core.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PositionsController : Controller
+    public class PositionsController : ControllerBase
     {
         private readonly AuroraContext _context;
         
@@ -23,9 +23,10 @@ namespace MedSale_API_Core.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<Position>>> GetPosition(int id)
+        public async Task<ActionResult<Position>> GetPosition(int id)
         {
             var position = await _context.Positions.FindAsync(id);
+
             if (position == null)
                 return NotFound();
             return Ok(position);
