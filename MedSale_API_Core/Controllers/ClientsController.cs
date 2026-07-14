@@ -48,7 +48,7 @@ namespace MedSale_API_Core.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> EditClinet(Client client, int id)
+        public async Task<ActionResult> EditClient(Client client, int id)
         {
             if (id != client.Id)
                 return BadRequest();

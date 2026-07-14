@@ -86,7 +86,7 @@ namespace MedSale_API_Core.Controllers
 
         private async Task<bool> EmployeeExistAsync(int id)
         {
-            return await _context.Products.AnyAsync(e => e.Id == id);
+            return await _context.Employees.AnyAsync(e => e.Id == id);
         }
     }
 }
