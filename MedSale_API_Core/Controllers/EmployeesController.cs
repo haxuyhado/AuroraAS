@@ -35,6 +35,23 @@ namespace MedSale_API_Core.Controllers
             return Ok(emp);
         }
 
+        [HttpGet("login/{id}")]
+        public async Task<ActionResult<bool>> AcceptLogin(int id, string password)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var employee = await _context.Employees.FindAsync(id);
+
+            if (employee == null)
+                return NotFound(false);
+            if (Cryptor.Encrypt(password) != employee.MyPassword)
+                return BadRequest(false);
+
+            return Ok(true);
+
+        }
+
         [HttpPost]
         public async Task<ActionResult<Employee>> AddEmployee(Employee emp)
         {
