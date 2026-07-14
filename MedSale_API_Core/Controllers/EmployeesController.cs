@@ -35,8 +35,8 @@ namespace MedSale_API_Core.Controllers
             return Ok(emp);
         }
 
-        [HttpGet("login/{id}")]
-        public async Task<ActionResult<bool>> AcceptLogin(int id, string password)
+        [HttpGet("login/{id}/{password}")]
+        public async Task<ActionResult<object>> AcceptLogin(int id, string password)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -44,11 +44,11 @@ namespace MedSale_API_Core.Controllers
             var employee = await _context.Employees.FindAsync(id);
 
             if (employee == null)
-                return NotFound(false);
+                return NotFound(new { success = false, message = "Сотрудник не найден" });
             if (Cryptor.Encrypt(password) != employee.MyPassword)
-                return BadRequest(false);
+                return BadRequest(new { success = false, message = "Неверный пароль" });
 
-            return Ok(true);
+            return Ok(new { success = true, message = $"Добро пожаловать, {employee.FullName}!" });
 
         }
 
@@ -57,6 +57,8 @@ namespace MedSale_API_Core.Controllers
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
+
+            emp.MyPassword = Cryptor.Encrypt(emp.MyPassword);
 
             await _context.Employees.AddAsync(emp);
             await _context.SaveChangesAsync();
@@ -67,23 +69,33 @@ namespace MedSale_API_Core.Controllers
         [HttpPut("{id}")]
         public async Task<ActionResult> EditEmployee(int id, Employee emp)
         {
-            if (id != emp.Id)
-                return BadRequest();
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
+            var existingEmployee = await _context.Employees.FindAsync(id);
+            if (existingEmployee == null)
+                return NotFound();
 
-            _context.Entry(emp).State = EntityState.Modified; 
-            
-            try 
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!await EmployeeExistAsync(id))
-                    return NotFound();
-                throw;
-            }
+            existingEmployee.FullName = emp.FullName;
+            existingEmployee.PositionId = emp.PositionId;
+            existingEmployee.Address = emp.Address;
+            existingEmployee.Phone = emp.Phone;
+            existingEmployee.Email = emp.Email;
+
+            await _context.SaveChangesAsync();
+            return NoContent();
+        }
+
+        [HttpPut("pass/{id}/{password}/{newPassword}")]
+        public async Task<ActionResult> ChangePassword(int id, string password, string newPassword)
+        {
+            var employee = await _context.Employees.FindAsync(id);
+            if (employee == null)
+                return NotFound(new { success = false, message = "Пользователь не найден" });
+
+            if (Cryptor.Encrypt(password) != employee.MyPassword)
+                return BadRequest(new { success = false, message = "Неверный старый пароль" });
+
+            employee.MyPassword = Cryptor.Encrypt(newPassword);
+            await _context.SaveChangesAsync();
+
             return NoContent();
         }
 
